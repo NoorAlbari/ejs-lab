@@ -1,27 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
 
 <body>
-    <nav>
-    <a href="/">Home</a>
-    <a href="/resturaunts">Resturaunts</a>
-</nav>
+
+    <body>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/resturaunts">Resturaunts</a>
+        </nav>
 
 
-    <h1>All Resturaunts</h1>
-    
-    <% for (let oneResturaunt of resturaunts){%>
-        
-<a href="/resturaunts/<%= oneResturaunt.id%>"><%= oneResturaunt.name%></a>
-<br>
-<br>
-<% } %>
-    
-</body>
+        <h1>All Resturaunts</h1>
+
+        <% for (let oneResturaunt of resturaunts){%>
+            <% if (oneResturaunt.isOpen===false) {%>
+                <a href="/resturaunts/<%= oneResturaunt.id%>">
+                    <%= oneResturaunt.name%>-- COLSED
+                </a>
+
+                <br>
+                <br>
+                <%}else {%>
+                    <a href="/resturaunts/<%= oneResturaunt.id%>">
+                        <%= oneResturaunt.name%>
+                    </a>
+                    <br>
+                    <br>
+                    <%}%>
+                        <% } %>
+
+    </body>
+
 </html>

@@ -9,11 +9,19 @@
     <h1>Resturaunt details</h1>
 
 <h2>Resturaunt Name : <%= resturaunt.name%></h2>
-<p>Resturaunt Open : <%= resturaunt.isOpen%></p>
+<% if(resturaunt.isOpen === true) {%>
+<p>Resturaunt Status : OPEN</p>
+<%}else {%>
+<p>Resturaunt Status : CLOSED</p>
+<%} %>
+
 <p>Resturaunt Address :<%= resturaunt.address%></p>
 <p>Resturaunt Phone Number : <%= resturaunt.phone%></p>
 <br>
 <br>
+
+
+
 
 </body>
 </html>
